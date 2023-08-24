@@ -1,0 +1,129 @@
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section {
+    padding: 120px 0;
+  }
+
+  .section-title {
+    font-size: 42px;
+  }
+
+  /* about */
+
+  .about-list {
+    flex-direction: row;
+  }
+
+  .container.about {
+    display: flex;
+    gap: 30px;
+  }
+
+  .about-item-img {
+    width: 270px;
+  }
+
+  .about-wrapper {
+    max-width: 470px;
+  }
+
+  .about-wrapper .section-title {
+    font-size: 42px;
+  }
+
+  /* services */
+  .tables-wrapper {
+    display: flex;
+    gap: 36px;
+    margin-bottom: 44px;
+  }
+
+  .service-table-mob {
+    display: none;
+  }
+
+  .service-table {
+    color: var(--secondary-text-color);
+    font-size: 18px;
+    line-height: 1.67;
+    letter-spacing: 0.02em;
+    padding: 30px 20px;
+
+    flex-basis: calc((100% - 36px) / 2);
+  }
+
+  /* advantages */
+
+  .advantages.container {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 130px;
+    padding-right: 115px;
+  }
+
+  .advantages-list {
+    max-width: 370px;
+  }
+  .advantages-item {
+    width: 170px;
+    padding: 20px 24px;
+  }
+
+  /* our barbers */
+
+  .barber-cards {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .barbers > .container {
+    max-width: 1200px;
+  }
+
+  /* gallery */
+
+  .gallery-item {
+    flex-basis: calc((100% - 90px) / 4);
+  }
+
+  .gallery-list {
+    flex-direction: row;
+  }
+
+  /* contacts */
+
+  .contacts-wrap {
+    max-width: 1600px;
+    margin: 0 auto;
+    background-color: var(--darg-bg-color);
+    background-image: url(../images/contacts-bg.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: calc(50% - 15px) 100%;
+  }
+
+  .contact.container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .booking-section {
+    padding-top: 130px;
+    padding-right: 30px;
+    width: calc(50% + 15px);
+  }
+
+  .contacts-section {
+    padding-top: 130px;
+    padding-bottom: 120px;
+    padding-left: 100px;
+    width: 50%;
+  }
+
+  /* forms */
+}

@@ -1,0 +1,31 @@
+@media screen and (max-width: 480px) {
+  .contact .section-title {
+    text-align: center;
+  }
+
+  .modal-body {
+    width: 90%;
+    padding: 40px 32px;
+  }
+
+  .modal-form {
+    gap: 12px;
+  }
+
+  .custom-select-container {
+    margin-bottom: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modal-body {
+    max-width: 460px;
+    padding: 60px 40px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .service-table-row td {
+    max-width: 100px;
+  }
+}

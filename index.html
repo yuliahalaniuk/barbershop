@@ -13,7 +13,13 @@
       rel="stylesheet"
     />
 
+    <link rel="stylesheet" href="./assets/custom-select.css" />
+
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/mobile.css" />
+    <link rel="stylesheet" href="./css/tablet.css" />
+
+    <link rel="stylesheet" href="./css/desktop.css" />
   </head>
   <body>
     <header class="page-header">
@@ -27,7 +33,6 @@
               height="55"
             />
           </a>
-
           <ul class="header-list list">
             <li class="header-item">
               <a href="#about" class="header-link">About</a>
@@ -46,46 +51,133 @@
           </ul>
         </nav>
 
-        <a href="tel:+380441111111" class="header-link phone"
-          >+38 044 111 11 11</a
-        >
-        <button type="button" class="button header-button">
-          Online-booking
-        </button>
+        <div class="header-tel-wrap">
+          <a href="tel:+380441111111" class="header-link phone"
+            >+38 044 111 11 11</a
+          >
+          <button type="button" class="button header-button" js-modal-open>
+            Online-booking
+          </button>
+        </div>
+
+        <div class="mob-men">
+          <a href="./index.html" class="mob-logo">
+            <img
+              src="./images/logo.svg"
+              alt="site logo"
+              width="69"
+              height="55"
+            />
+          </a>
+
+          <button class="menu-open-btn" js-menu-open-btn>
+            <svg class="menu-open-icon">
+              <use href="./images/sprite.svg#menu-open"></use>
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
+
+    <div class="mobile-menu is-hidden" js-mobile-menu>
+      <div class="overlay">
+        <div class="menu-body">
+          <button class="menu-close-btn" js-menu-close-btn>
+            <svg class="menu-close-icon">
+              <use href="./images/sprite.svg#menu-close"></use>
+            </svg>
+          </button>
+
+          <ul class="menu-nav">
+            <li class="menu-nav-item">
+              <a href="#about" class="menu-nav-link">About</a>
+            </li>
+            <li class="menu-nav-item">
+              <a href="#services-and-prices" class="menu-nav-link"
+                >Services and prices</a
+              >
+            </li>
+            <li class="menu-nav-item">
+              <a href="#barbers" class="menu-nav-link">Barbers</a>
+            </li>
+            <li class="menu-nav-item">
+              <a href="#contacts" class="menu-nav-link">Contacts</a>
+            </li>
+          </ul>
+
+          <div class="menu-tel-wrap">
+            <a href="tel:+380441111111" class="menu-link phone"
+              >+38 044 111 11 11</a
+            >
+            <button type="button" class="button menu-button" js-modal-open>
+              Online-booking
+            </button>
+          </div>
+
+          <div class="hero-socials">
+            <ul class="menu-socials list">
+              <li class="soc-item one">
+                <a href="https://www.instagram.com/" class="socials"
+                  >Instagram</a
+                >
+              </li>
+              <li class="soc-item two">
+                <a href="https://www.youtube.com/" class="socials">Youtube</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <main>
       <!-- Hero -->
       <section class="hero">
-        <div class="container hero-container">
-          <ul class="hero-socials vertical-socials list">
-            <li class="soc-item one">
-              <a href="" class="socials verti">Instagram</a>
+        <div class="hero-container">
+          <div class="hero-soc">
+            <ul class="hero-socials vertical-socials list">
+              <li class="soc-item one">
+                <a href="https://www.instagram.com/" class="socials"
+                  >Instagram</a
+                >
+              </li>
+              <li class="soc-item two">
+                <a href="https://www.youtube.com/" class="socials">Youtube</a>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="hero-btn-list">
+            <li>
+              <button type="button" class="hero-btn back" js-hero-btn-back>
+                Back
+              </button>
             </li>
-            <li class="soc-item two">
-              <a href="" class="socials vertic">Youtube</a>
+            <li>
+              <button
+                type="button"
+                class="hero-btn forward"
+                js-hero-btn-forward
+              >
+                Forward
+              </button>
             </li>
           </ul>
 
           <div class="hero-wrap">
-            <div>
-              <p class="section-subtitle transparent">
-                A hair salon for men in Kyiv
-              </p>
-              <h1 class="hero-title">BarberShop</h1>
-              <p class="section-text hero-text">
-                We are experts in trendy men’s haircuts.<br />
-                We work quickly, carefully and with style.
-              </p>
+            <div class="hero-wrap-background"></div>
+            <div class="hero-text-wrap">
+              <div>
+                <p class="section-subtitle transparent">
+                  A hair salon for men in Kyiv
+                </p>
+                <h1 class="hero-title">BarberShop</h1>
+                <p class="section-text hero-text">
+                  We are experts in trendy men’s haircuts.<br />
+                  We work quickly, carefully and with style.
+                </p>
+              </div>
             </div>
-
-            <ul class="hero-btn-list">
-              <li><button type="button" class="hero-btn back">Back</button></li>
-              <li>
-                <button type="button" class="hero-btn forward">Forward</button>
-              </li>
-            </ul>
           </div>
         </div>
       </section>
@@ -94,27 +186,72 @@
       <section class="section" id="about">
         <div class="container about">
           <ul class="about-list list">
-            <li class="about-item">
+            <!-- <li class="about-item">
               <img
-                src="./images/img_beard.jpg"
+                srcset="
+                  ./images/img_beard-tab.jpg  768w,
+                  ./images/img_beard.jpg     1200w
+                "
+                sizes="(min-width: 1200px) 270px , (min-width: 768px) 330px "
+                src="./images/img_beard-tab-2x.jpg"
                 alt="beard grooming"
-                width="270"
               />
             </li>
             <li class="about-item">
               <img
-                src="./images/img-hair.jpg"
+                srcset="
+                  ./images/img-hair-tab.jpg  768w,
+                  ./images/img-hair.jpg     1200w
+                "
+                sizes="(min-width: 1200px) 270px , (min-width: 768px) 330px "
+                src="./images/img-hair-tab-2x.jpg"
                 alt="haircut process"
-                width="270"
               />
+            </li> -->
+            <li>
+              <picture>
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images/img_beard.jpg"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images/img_beard-tab.jpg"
+                />
+
+                <img
+                  src="./images/img_beard-tab.jpg"
+                  alt="beard grooming"
+                  class="about-item-img"
+                />
+              </picture>
+            </li>
+            <li>
+              <picture>
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images/img-hair.jpg"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images/img-hair-tab.jpg"
+                />
+
+                <img
+                  src="./images/img-hair-tab.jpg "
+                  alt="haircut process"
+                  class="about-item-img"
+                />
+              </picture>
             </li>
           </ul>
+
           <div class="about-wrapper">
             <p class="section-subtitle">about</p>
             <h2 class="section-title secondary">
               Best Barbershop in your city
             </h2>
-            <p class="section-text">
+            <p class="section-text-main">
               If you want to add more confidence to your image, you should
               definitely visit us.
             </p>
@@ -126,7 +263,7 @@
               ready to improve everyone who comes to us!
             </p>
 
-            <button type="button" class="button secondary">
+            <button type="button" class="button secondary" js-modal-open>
               Online-booking
             </button>
           </div>
@@ -180,7 +317,42 @@
             </table>
           </div>
 
-          <button type="button" class="button booking-btn">
+          <table class="service-table-mob">
+            <tr class="service-table-row">
+              <td>Men’s haircut</td>
+              <td>from 300 uah.</td>
+            </tr>
+            <tr class="service-table-row">
+              <td>Beard trim</td>
+              <td>from 300 uah.</td>
+            </tr>
+            <tr class="service-table-row">
+              <td>Mustache trim</td>
+              <td>from 200 uah.</td>
+            </tr>
+            <tr class="service-table-row">
+              <td>Straight razor shave</td>
+              <td>from 200 uah</td>
+            </tr>
+            <tr class="service-table-row">
+              <td>Trainee’s haircut</td>
+              <td>from 200 uah.</td>
+            </tr>
+            <tr class="service-table-row">
+              <td>Haircut under the nozzle</td>
+              <td>from 200 uah.</td>
+            </tr>
+            <tr class="service-table-row">
+              <td>Haircut under the nozzle</td>
+              <td>from 200 uah.</td>
+            </tr>
+            <tr class="service-table-row">
+              <td>Haircut under the nozzle</td>
+              <td>from 200 uah.</td>
+            </tr>
+          </table>
+
+          <button type="button" class="button booking-btn" js-modal-open>
             Online-booking
           </button>
         </div>
@@ -228,35 +400,52 @@
               <img
                 src="./images/img1.jpg"
                 alt="barber picture"
-                width="370"
                 class="card-pic"
               />
               <h3 class="card-title">John Smith</h3>
               <p class="card-text">Extreme Barber</p>
               <ul class="social-list list">
                 <li>
-                  <a class="social-link" href="" rel="noopener nofollow">
+                  <a
+                    class="social-link"
+                    href="https://www.instagram.com/"
+                    rel="noopener nofollow"
+                    target="_blank"
+                  >
                     <svg class="social-icon">
                       <use href="./images/sprite.svg#icon-instagram"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a class="social-link" href="" rel="noopener nofollow"
+                  <a
+                    class="social-link"
+                    href="https://twitter.com/"
+                    rel="noopener nofollow"
+                    target="_blank"
                     ><svg class="social-icon">
                       <use href="./images/sprite.svg#icon-twitter"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a class="social-link" href="" rel="noopener nofollow"
+                  <a
+                    class="social-link"
+                    href="https://uk-ua.facebook.com/"
+                    rel="noopener nofollow"
+                    target="_blank"
                     ><svg class="social-icon">
                       <use href="./images/sprite.svg#icon-facebook"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a class="social-link" href="" rel="noopener nofollow">
+                  <a
+                    class="social-link"
+                    href="https://www.linkedin.com/"
+                    rel="noopener nofollow "
+                    target="_blank"
+                  >
                     <svg class="social-icon">
                       <use href="./images/sprite.svg#icon-linkedin"></use>
                     </svg>
@@ -268,35 +457,52 @@
               <img
                 src="./images/img2.jpg"
                 alt="barber picture"
-                width="370"
                 class="card-pic"
               />
               <h3 class="card-title">Michele Doe</h3>
               <p class="card-text">Extreme Barber</p>
               <ul class="social-list list">
                 <li>
-                  <a class="social-link" href="" rel="noopener nofollow">
+                  <a
+                    class="social-link"
+                    href="https://www.instagram.com/"
+                    rel="noopener nofollow"
+                    target="_blank"
+                  >
                     <svg class="social-icon">
                       <use href="./images/sprite.svg#icon-instagram"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a class="social-link" href="" rel="noopener nofollow"
+                  <a
+                    class="social-link"
+                    href="https://twitter.com/"
+                    rel="noopener nofollow"
+                    target="_blank"
                     ><svg class="social-icon">
                       <use href="./images/sprite.svg#icon-twitter"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a class="social-link" href="" rel="noopener nofollow"
+                  <a
+                    class="social-link"
+                    href="https://uk-ua.facebook.com/"
+                    rel="noopener nofollow"
+                    target="_blank"
                     ><svg class="social-icon">
                       <use href="./images/sprite.svg#icon-facebook"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a class="social-link" href="" rel="noopener nofollow">
+                  <a
+                    class="social-link"
+                    href="https://www.linkedin.com/"
+                    rel="noopener nofollow "
+                    target="_blank"
+                  >
                     <svg class="social-icon">
                       <use href="./images/sprite.svg#icon-linkedin"></use>
                     </svg>
@@ -308,35 +514,52 @@
               <img
                 src="./images/img3.jpg"
                 alt="barber picture"
-                width="370"
                 class="card-pic"
               />
               <h3 class="card-title">Alan Black</h3>
               <p class="card-text">Extreme Barber</p>
               <ul class="social-list list">
                 <li>
-                  <a class="social-link" href="" rel="noopener nofollow">
+                  <a
+                    class="social-link"
+                    href="https://www.instagram.com/"
+                    rel="noopener nofollow"
+                    target="_blank"
+                  >
                     <svg class="social-icon">
                       <use href="./images/sprite.svg#icon-instagram"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a class="social-link" href="" rel="noopener nofollow"
+                  <a
+                    class="social-link"
+                    href="https://twitter.com/"
+                    rel="noopener nofollow"
+                    target="_blank"
                     ><svg class="social-icon">
                       <use href="./images/sprite.svg#icon-twitter"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a class="social-link" href="" rel="noopener nofollow"
+                  <a
+                    class="social-link"
+                    href="https://uk-ua.facebook.com/"
+                    rel="noopener nofollow"
+                    target="_blank"
                     ><svg class="social-icon">
                       <use href="./images/sprite.svg#icon-facebook"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a class="social-link" href="" rel="noopener nofollow">
+                  <a
+                    class="social-link"
+                    href="https://www.linkedin.com/"
+                    rel="noopener nofollow "
+                    target="_blank"
+                  >
                     <svg class="social-icon">
                       <use href="./images/sprite.svg#icon-linkedin"></use>
                     </svg>
@@ -350,32 +573,48 @@
 
       <!-- Gallery -->
       <section class="section">
-        <div class="container">
+        <div class="container gl">
           <h2 class="visually-hidden">Gallery</h2>
           <p class="gallery section-subtitle">
             In Latin, "barba" means "beard"
           </p>
           <ul class="gallery-list list">
             <li class="gallery-item">
-              <img src="./images/gal-1.jpg" alt="gallery photo" width="270px" />
+              <img
+                src="./images/gal-1.jpg"
+                alt="gallery photo"
+                class="gallery-item-pic"
+              />
             </li>
             <li class="gallery-item">
-              <img src="./images/gal-2.jpg" alt="gallery photo" width="270px" />
+              <img
+                src="./images/gal-2.jpg"
+                alt="gallery photo"
+                class="gallery-item-pic"
+              />
             </li>
             <li class="gallery-item">
-              <img src="./images/gal-3.jpg" alt="gallery photo" width="270px" />
+              <img
+                src="./images/gal-3.jpg"
+                alt="gallery photo"
+                class="gallery-item-pic"
+              />
             </li>
             <li class="gallery-item">
-              <img src="./images/gal-4.jpg" alt="gallery photo" width="270px" />
+              <img
+                src="./images/gal-4.jpg"
+                alt="gallery photo"
+                class="gallery-item-pic"
+              />
             </li>
           </ul>
         </div>
       </section>
 
       <!-- Contacts -->
-      <div class="contacts-wrap">
+      <div class="contacts-wrap" id="contacts">
         <div class="contact container">
-          <section class="booking-section">
+          <section class="booking-section section">
             <h2 class="section-title primary">Online-booking</h2>
             <form action="" class="contact-form">
               <div class="form-wrapper">
@@ -383,10 +622,10 @@
                   <div class="form-field">
                     <label for="user-name" class="form-label">Name*</label>
                     <input
-                      type="namet"
+                      type="name"
                       name="user-name"
                       id="user-name"
-                      class="form-input"
+                      class="form-input short"
                     />
                   </div>
                   <div class="form-field">
@@ -395,7 +634,7 @@
                       type="tel"
                       name="phone"
                       id="phone"
-                      class="form-input"
+                      class="form-input short"
                     />
                   </div>
                 </div>
@@ -413,71 +652,140 @@
             </form>
           </section>
 
-          <section class="contacts-section">
+          <section class="contacts-section section">
             <h2 class="section-title primary">Contacts</h2>
+            <div class="contacts-wrapper">
+              <address>
+                <ul class="contacts list">
+                  <li class="contacts-item">
+                    <a
+                      href="https://goo.gl/maps/CXGPEKadGLZYYTAY8"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="contacts-link address"
+                    >
+                      <svg class="icon">
+                        <use
+                          href="./images/sprite-contacts.svg#icon-map-pin"
+                        ></use>
+                      </svg>
+                      <div>48 Hnata Khotkevycha, Lviv, 79000</div></a
+                    >
+                  </li>
 
-            <address>
-              <ul class="contacts list">
-                <li class="contacts-item">
-                  <a
-                    href="https://goo.gl/maps/CXGPEKadGLZYYTAY8"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="contacts-link address"
-                  >
-                    <svg class="icon">
-                      <use
-                        href="./images/sprite-contacts.svg#icon-map-pin"
-                      ></use>
-                    </svg>
-                    <div>48 Hnata Khotkevycha, Lviv, 79000</div></a
-                  >
-                </li>
+                  <li class="contacts-item">
+                    <a href="tel:+380441111111" class="contacts-link"
+                      ><svg class="icon">
+                        <use
+                          href="./images/sprite-contacts.svg#icon-phone"
+                          width="20px"
+                          height="20px"
+                        ></use>
+                      </svg>
+                      <div>+38 044 111 11 11</div></a
+                    >
+                  </li>
 
-                <li class="contacts-item">
-                  <a href="tel:+380441111111" class="contacts-link"
-                    ><svg class="icon">
-                      <use
-                        href="./images/sprite-contacts.svg#icon-phone"
-                        width="20px"
-                        height="20px"
-                      ></use>
-                    </svg>
-                    <div>+38 044 111 11 11</div></a
-                  >
-                </li>
+                  <li class="contacts-item">
+                    <a
+                      href="mailto:barbershop@email.com"
+                      class="contacts-link email"
+                    >
+                      <svg class="icon">
+                        <use
+                          href="./images/sprite-contacts.svg#icon-mail"
+                        ></use>
+                      </svg>
+                      <div>barbershop@email.com</div>
+                    </a>
+                  </li>
+                </ul>
+              </address>
 
-                <li class="contacts-item">
-                  <a
-                    href="mailto:barbershop@email.com"
-                    class="contacts-link email"
-                  >
-                    <svg class="icon">
-                      <use href="./images/sprite-contacts.svg#icon-mail"></use>
-                    </svg>
-                    <div>barbershop@email.com</div>
-                  </a>
-                </li>
-              </ul>
-            </address>
-
-            <h3 class="section-subtitle">Working hours</h3>
-            <p class="section-text hours">Every day from 9:00 to 22:00</p>
+              <div>
+                <h3 class="section-subtitle">Working hours</h3>
+                <p class="section-text hours">Every day from 9:00 to 22:00</p>
+              </div>
+            </div>
           </section>
         </div>
       </div>
-      <!-- <section class="section contacts" id="contacts"> -->
     </main>
+
+    <!-- Modal -->
+    <div class="modal is-hidden" js-modal>
+      <div class="overlay" js-modal-backdrop>
+        <div class="modal-body">
+          <b class="modal-title"> Leave your contacts</b>
+          <form class="modal-form" autocomplete="off">
+            <label class="modal-label">
+              <span>Your name</span>
+              <input
+                type="text"
+                name="name"
+                class="modal-person-info"
+                autocomplete="off"
+              />
+            </label>
+            <label class="modal-label">
+              <span> Your phone number </span>
+              <input
+                type="text"
+                name="number"
+                class="modal-person-info"
+                autocomplete="off"
+                auto
+              />
+            </label>
+            <div class="custom-select-container customSelect">
+              <label class="barber-select-label">Choose your barber</label>
+
+              <select id="mySelect">
+                <option class="select-option" value="john-smith">
+                  John Smith
+                </option>
+                <option class="select-option" value="michele-doe">
+                  Michele Doe
+                </option>
+                <option class="select-option" value="alan-black">
+                  Alan Black
+                </option>
+              </select>
+              <div class="custom-select-panel">
+                <div class="custom-select-option" data-value="john-smith">
+                  John Smith
+                </div>
+                <div class="custom-select-option" data-value="michele-doe">
+                  Michele Doe
+                </div>
+                <div class="custom-select-option" data-value="alan-black">
+                  Alan Black
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="button secondary">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer class="page-footer">
-      <div class="container">
+      <div class="container footer-container">
         <p class="footer-copyright">&#169; Copyright 2020</p>
         <ul class="footer-socials list">
-          <li><a href="" class="socials">Youtube</a></li>
-          <li><a href="" class="socials">Instagram</a></li>
+          <li>
+            <a href="https://www.youtube.com/" class="socials">Youtube</a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/" class="socials">Instagram</a>
+          </li>
         </ul>
       </div>
     </footer>
+
+    <script src="./assets/custom-select.min.js" type="text/javascript"></script>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
