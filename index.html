@@ -55,7 +55,7 @@
           <a href="tel:+380441111111" class="header-link phone"
             >+38 044 111 11 11</a
           >
-          <button type="button" class="button header-button" js-modal-open>
+          <button type="button" class="button header-button js-modal-open">
             Online-booking
           </button>
         </div>
@@ -70,7 +70,7 @@
             />
           </a>
 
-          <button class="menu-open-btn" js-menu-open-btn>
+          <button class="menu-open-btn js-menu-open-btn">
             <svg class="menu-open-icon">
               <use href="./images/sprite.svg#menu-open"></use>
             </svg>
@@ -79,10 +79,10 @@
       </div>
     </header>
 
-    <div class="mobile-menu is-hidden" js-mobile-menu>
+    <div class="mobile-menu is-hidden js-mobile-menu">
       <div class="overlay">
         <div class="menu-body">
-          <button class="menu-close-btn" js-menu-close-btn>
+          <button class="menu-close-btn js-menu-close-btn">
             <svg class="menu-close-icon">
               <use href="./images/sprite.svg#menu-close"></use>
             </svg>
@@ -109,7 +109,7 @@
             <a href="tel:+380441111111" class="menu-link phone"
               >+38 044 111 11 11</a
             >
-            <button type="button" class="button menu-button" js-modal-open>
+            <button type="button" class="button menu-button js-modal-open">
               Online-booking
             </button>
           </div>
@@ -149,15 +149,14 @@
 
           <ul class="hero-btn-list">
             <li>
-              <button type="button" class="hero-btn back" js-hero-btn-back>
+              <button type="button" class="hero-btn back js-hero-btn-back">
                 Back
               </button>
             </li>
             <li>
               <button
                 type="button"
-                class="hero-btn forward"
-                js-hero-btn-forward
+                class="hero-btn forward js-hero-btn-forward"
               >
                 Forward
               </button>
@@ -247,7 +246,7 @@
               ready to improve everyone who comes to us!
             </p>
 
-            <button type="button" class="button secondary" js-modal-open>
+            <button type="button" class="button secondary js-modal-open">
               Online-booking
             </button>
           </div>
@@ -336,7 +335,7 @@
             </tr>
           </table>
 
-          <button type="button" class="button booking-btn" js-modal-open>
+          <button type="button" class="button booking-btn js-modal-open">
             Online-booking
           </button>
         </div>
@@ -604,9 +603,9 @@
               <div class="form-wrapper">
                 <div class="horizontal-form">
                   <div class="form-field">
-                    <label for="userName" class="form-label">Name*</label>
+                    <label for="user-name" class="form-label">Name*</label>
                     <input
-                      type="name"
+                      type="text"
                       name="userName"
                       id="user-name"
                       class="form-input short"
@@ -700,8 +699,8 @@
     </main>
 
     <!-- Modal -->
-    <div class="modal is-hidden" js-modal>
-      <div class="overlay" js-modal-backdrop>
+    <div class="modal is-hidden js-modal">
+      <div class="overlay js-modal-backdrop">
         <div class="modal-body">
           <b class="modal-title"> Leave your contacts</b>
           <form class="modal-form" autocomplete="off">
@@ -718,11 +717,10 @@
             <label class="modal-label">
               <span> Your phone number </span>
               <input
-                type="text"
+                type="tel"
                 name="number"
                 class="modal-person-info"
                 autocomplete="off"
-                auto
                 required
               />
             </label>
@@ -831,8 +829,8 @@
       </div>
     </div>
 
-    <div class="modal-gratitude is-hidden" js-modal>
-      <div class="overlay" js-modal-gratitude-backdrop>
+    <div class="modal-gratitude is-hidden js-modal">
+      <div class="overlay js-modal-gratitude-backdrop">
         <div class="modal-body">
           <div class="thanks-modal-tick">&#10004;</div>
           <p class="thanks-modal-title">Awesome!</p>
@@ -859,7 +857,7 @@
       </div>
     </footer>
 
-    <script src="./assets/custom-select.min.js" type="text/javascript"></script>
+    <script src="./assets/custom-select.min.js"></script>
     <script type="module" src="./index.js"></script>
   </body>
 </html>

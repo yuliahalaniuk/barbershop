@@ -2,10 +2,10 @@ const cstSel = customSelect("select")[0];
 
 //------------------
 
-const openBtnRef = document.querySelector("button[js-menu-open-btn]");
-const closeBtnRef = document.querySelector("button[js-menu-close-btn]");
+const openBtnRef = document.querySelector(".js-menu-open-btn");
+const closeBtnRef = document.querySelector(".js-menu-close-btn");
 
-const menuEl = document.querySelector("div[js-mobile-menu]");
+const menuEl = document.querySelector(".js-mobile-menu");
 
 openBtnRef.addEventListener("click", (e) => {
   menuEl.classList.remove("is-hidden");
@@ -19,22 +19,39 @@ closeBtnRef.addEventListener("click", (e) => {
 
 //  -----------------------------------------
 
-const openModalnRef = document.querySelectorAll("button[js-modal-open]");
-const closeModal = document.querySelector("button[js-close-modal]");
+const handleCloseModal = (el) => {
+  el.classList.add("is-hidden");
+  document.body.style.overflow = "auto";
 
-const overlayEl = document.querySelector("[js-modal-backdrop]");
+  if (el === modalEl) {
+    window.removeEventListener("keydown", handleModalEsc);
+  } else if (el === thanksModal) {
+    window.removeEventListener("keydown", handleThanksModalEsc);
+  }
+};
+const openModalnRef = document.querySelectorAll(".js-modal-open");
+const closeModal = document.querySelector(".js-close-modal");
+
+const overlayEl = document.querySelector(".js-modal-backdrop");
 
 const modalEl = document.querySelector(".modal");
+
+const handleModalEsc = (e) => {
+  if (e.code === "Escape") {
+    handleCloseModal(modalEl);
+  }
+};
 
 openModalnRef.forEach((btn) =>
   btn.addEventListener("click", (e) => {
     modalEl.classList.remove("is-hidden");
     document.body.style.overflow = "hidden";
 
+    window.addEventListener("keydown", handleModalEsc);
+
     overlayEl.addEventListener("click", (e) => {
       if (e.target === e.currentTarget) {
-        modalEl.classList.add("is-hidden");
-        document.body.style.overflow = "auto";
+        handleCloseModal(modalEl);
       }
     });
   })
@@ -60,14 +77,15 @@ modalFormRef.addEventListener("submit", (e) => {
 
   e.currentTarget.reset();
 
-  modalEl.classList.add("is-hidden");
+  handleCloseModal(modalEl);
   thanksModal.classList.remove("is-hidden");
+  window.addEventListener("keydown", handleThanksModalEsc);
 });
 
 //  -----------------------------------------
 
-const backBtnRef = document.querySelector("[js-hero-btn-back]");
-const forwardBtnRef = document.querySelector("[js-hero-btn-forward]");
+const backBtnRef = document.querySelector(".js-hero-btn-back");
+const forwardBtnRef = document.querySelector(".js-hero-btn-forward");
 const heroWrapEl = document.querySelector(".hero-wrap-background");
 
 const lineOne = document.querySelector(".hero-back-one");
@@ -129,6 +147,8 @@ contactFormRef.addEventListener("submit", (e) => {
   };
 
   e.currentTarget.reset();
+
+  window.addEventListener("keydown", handleThanksModalEsc);
   thanksModal.classList.remove("is-hidden");
 });
 
@@ -136,11 +156,16 @@ contactFormRef.addEventListener("submit", (e) => {
 
 const thanksModal = document.querySelector(".modal-gratitude");
 
-const overlayThanksEl = document.querySelector("[js-modal-gratitude-backdrop]");
+const overlayThanksEl = document.querySelector(".js-modal-gratitude-backdrop");
+
+const handleThanksModalEsc = (e) => {
+  if (e.code === "Escape") {
+    handleCloseModal(thanksModal);
+  }
+};
 
 overlayThanksEl.addEventListener("click", (e) => {
   if (e.target === e.currentTarget) {
-    thanksModal.classList.add("is-hidden");
-    document.body.style.overflow = "auto";
+    handleCloseModal(thanksModal);
   }
 });
