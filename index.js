@@ -75,7 +75,6 @@ const lineTwo = document.querySelector(".hero-back-two");
 const lineThree = document.querySelector(".hero-back-three");
 
 const navBtnClassToggle = (activeBtn, otherBtn) => {
-  console.log(heroWrapEl.classList.contains("is-back"));
   if (heroWrapEl.classList.contains(otherBtn)) {
     heroWrapEl.classList.remove(otherBtn);
 
@@ -129,8 +128,6 @@ contactFormRef.addEventListener("submit", (e) => {
     comment: comment.value,
   };
 
-  console.log(userData);
-
   e.currentTarget.reset();
   thanksModal.classList.remove("is-hidden");
 });
@@ -142,7 +139,6 @@ const thanksModal = document.querySelector(".modal-gratitude");
 const overlayThanksEl = document.querySelector("[js-modal-gratitude-backdrop]");
 
 overlayThanksEl.addEventListener("click", (e) => {
-  console.log(e);
   if (e.target === e.currentTarget) {
     thanksModal.classList.add("is-hidden");
     document.body.style.overflow = "auto";

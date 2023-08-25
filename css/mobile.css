@@ -2,6 +2,9 @@
   .contact .section-title {
     text-align: center;
   }
+  .hero-title {
+    font-size: 36px;
+  }
 
   .modal-body {
     width: 90%;
@@ -15,6 +18,22 @@
 
   .custom-select-container {
     margin-bottom: 12px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .advantages-list {
+    max-width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .advantages-item:nth-child(2n + 1),
+  .advantages-item:nth-child(2n) {
+    margin: 0;
   }
 }
 

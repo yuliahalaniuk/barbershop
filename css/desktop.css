@@ -13,6 +13,32 @@
     font-size: 42px;
   }
 
+  .header-list {
+    display: flex;
+    align-items: center;
+    margin-left: 130px;
+    gap: 20px;
+  }
+  .header.container {
+    align-items: center;
+  }
+
+  .header-tel-wrap {
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    padding-top: 0;
+    padding-right: 20px;
+  }
+
+  .hero-title {
+    font-size: 72px;
+  }
+
+  .hero-container {
+    max-width: 1200px;
+  }
+
   /* about */
 
   .about-list {
@@ -123,6 +149,10 @@
     padding-bottom: 120px;
     padding-left: 100px;
     width: 50%;
+  }
+
+  .form-input.short {
+    width: 270px;
   }
 
   /* forms */
