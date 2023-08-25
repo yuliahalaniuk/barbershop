@@ -6,6 +6,7 @@
   .modal-body {
     width: 90%;
     padding: 40px 32px;
+    overflow-y: scroll;
   }
 
   .modal-form {

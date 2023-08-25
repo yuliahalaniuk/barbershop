@@ -164,6 +164,12 @@
             </li>
           </ul>
 
+          <div class="hero-background-nav">
+            <div class="hero-back hero-back-one"></div>
+            <div class="hero-back hero-back-two is-active"></div>
+            <div class="hero-back hero-back-three"></div>
+          </div>
+
           <div class="hero-wrap">
             <div class="hero-wrap-background"></div>
             <div class="hero-text-wrap">
@@ -616,16 +622,17 @@
         <div class="contact container">
           <section class="booking-section section">
             <h2 class="section-title primary">Online-booking</h2>
-            <form action="" class="contact-form">
+            <form class="contact-form">
               <div class="form-wrapper">
                 <div class="horizontal-form">
                   <div class="form-field">
-                    <label for="user-name" class="form-label">Name*</label>
+                    <label for="userName" class="form-label">Name*</label>
                     <input
                       type="name"
-                      name="user-name"
+                      name="userName"
                       id="user-name"
                       class="form-input short"
+                      required
                     />
                   </div>
                   <div class="form-field">
@@ -635,6 +642,7 @@
                       name="phone"
                       id="phone"
                       class="form-input short"
+                      required
                     />
                   </div>
                 </div>
@@ -645,6 +653,7 @@
                     name="comment"
                     id="comment"
                     class="form-input"
+                    required
                   />
                 </div>
               </div>
@@ -725,6 +734,7 @@
                 name="name"
                 class="modal-person-info"
                 autocomplete="off"
+                required
               />
             </label>
             <label class="modal-label">
@@ -735,12 +745,13 @@
                 class="modal-person-info"
                 autocomplete="off"
                 auto
+                required
               />
             </label>
             <div class="custom-select-container customSelect">
               <label class="barber-select-label">Choose your barber</label>
 
-              <select id="mySelect">
+              <select id="mySelectBarber">
                 <option class="select-option" value="john-smith">
                   John Smith
                 </option>
@@ -764,8 +775,93 @@
               </div>
             </div>
 
+            <div class="custom-select-container customSelect">
+              <label class="barber-select-label">Service</label>
+
+              <select id="mySelectService">
+                <option class="select-option" value="men-haircut">
+                  Men’s haircut
+                </option>
+                <option class="select-option" value="beard-trim">
+                  Beard trim
+                </option>
+                <option class="select-option" value="mustache-trim">
+                  Mustache trim
+                </option>
+                <option class="select-option" value="straight-razor-shave">
+                  Straight razor shave
+                </option>
+                <option class="select-option" value="beard-trim">
+                  Beard trim
+                </option>
+                <option class="select-option" value="trainee-haircut">
+                  Trainee’s haircut
+                </option>
+                <option class="select-option" value="haircut-under-nozzle">
+                  Haircut under the nozzle
+                </option>
+                <option class="select-option" value="children-haircut">
+                  Children’s haircut
+                </option>
+                <option class="select-option" value="gray-hair-camouflage">
+                  Camouflage of gray hair
+                </option>
+              </select>
+
+              <div class="custom-select-panel">
+                <div class="custom-select-option" data-value="men-haircut">
+                  Men’s haircut
+                </div>
+                <div class="custom-select-option" data-value="beard-trim">
+                  Beard trim
+                </div>
+                <div class="custom-select-option" data-value="mustache-trim">
+                  Mustache trim
+                </div>
+                <div
+                  class="custom-select-option"
+                  data-value="straight-razor-shave"
+                >
+                  Straight razor shave
+                </div>
+                <div class="custom-select-option" data-value="beard-trim">
+                  Beard trim
+                </div>
+                <div class="custom-select-option" data-value="trainee-haircut">
+                  Trainee’s haircut
+                </div>
+                <div
+                  class="custom-select-option"
+                  data-value="haircut-under-nozzle"
+                >
+                  Haircut under the nozzle
+                </div>
+                <div class="custom-select-option" data-value="children-haircut">
+                  Children’s haircut
+                </div>
+                <div
+                  class="custom-select-option"
+                  data-value="gray-hair-camouflage"
+                >
+                  Camouflage of gray hair
+                </div>
+              </div>
+            </div>
             <button type="submit" class="button secondary">Send</button>
           </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-gratitude is-hidden" js-modal>
+      <div class="overlay" js-modal-gratitude-backdrop>
+        <div class="modal-body">
+          <div class="thanks-modal-tick">&#10004;</div>
+          <p class="thanks-modal-title">Awesome!</p>
+          <p class="thanks-modal-text">
+            Your details have been successfully submitted. The further
+            information will be sent to your email.
+          </p>
         </div>
       </div>
     </div>
